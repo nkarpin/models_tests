@@ -1,0 +1,14 @@
+classes:
+- system.xtrabackup.client.single
+parameters:
+  _param:
+    xtrabackup_remote_server: ${_param:infra_kvm_node03_address}
+    root_private_key: |
+      <<WILL_BE_GENERATED>>
+  xtrabackup:
+    server:
+      enabled: false
+      backup_dir: /srv/volumes/backup/xtrabackup
+  mysql:
+    client:
+      backup_dir: /srv/volumes/backup/backupninja

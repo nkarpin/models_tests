@@ -1,0 +1,11 @@
+classes:
+- system.zookeeper.backup.client.single
+parameters:
+  _param:
+    root_private_key: |
+      <<WILL_BE_GENERATED>>
+  zookeeper:
+    backup:
+      client:
+        target:
+          backup_dir: /srv/volumes/backup/zookeeper

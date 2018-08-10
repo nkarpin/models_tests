@@ -1,0 +1,15 @@
+classes:
+- system.backupninja.server.single
+- system.xtrabackup.server.single
+- system.glusterfs.client.cluster
+- system.glusterfs.client.volume.backup
+parameters:
+  _param:
+    backupninja_public_key: <<WILL_BE_GENERATED>>
+    xtrabackup_public_key: <<WILL_BE_GENERATED>>
+  backupninja:
+    server:
+      home_dir: /srv/volumes/backup/backupninja
+  xtrabackup:
+    server:
+      backup_dir: /srv/volumes/backup/xtrabackup

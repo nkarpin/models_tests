@@ -1,0 +1,14 @@
+classes:
+- system.backupninja.client.single
+- system.openssh.client.root
+parameters:
+  _param:
+    backupninja_backup_host: ${_param:infra_kvm_node03_address}
+    root_private_key: |
+      <<WILL_BE_GENERATED>>
+  # for salt-master backup
+  backupninja:
+    client:
+      target:
+        home_dir: /srv/volumes/backup/backupninja
+        engine_opts: "-av --delete --recursive --safe-links"

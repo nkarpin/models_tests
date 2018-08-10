@@ -1,0 +1,4 @@
+classes:
+- system.nova.compute.nfv.sriov
+- cluster.jenkins-oscore-test-cookiecutter-model-423.openstack.compute
+- system.neutron.compute.nfv.sriov

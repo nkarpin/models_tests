@@ -1,0 +1,3 @@
+classes:
+- cluster.jenkins-oscore-test-cookiecutter-model-423.openstack.compute
+- system.neutron.compute.nfv.dpdk
