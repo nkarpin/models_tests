@@ -15,14 +15,14 @@ classes:
 - system.nova.control.notification.messagingv2
 - system.cinder.control.cluster
 - system.cinder.control.notification.messagingv2
-- system.cinder.volume.single
-- system.cinder.volume.notification.messagingv2
 - system.heat.server.cluster
 - system.heat.server.notification.messagingv2
 - system.haproxy.proxy.listen.openstack.nova-placement
 - system.glusterfs.client.cluster
 - system.glusterfs.client.volume.keystone
 - system.glusterfs.client.volume.glance
+- system.ceilometer.client
+- system.ceilometer.client.neutron
 - cluster.jenkins-oscore-test-cookiecutter-model-423.infra
 - cluster.jenkins-oscore-test-cookiecutter-model-423.openstack.networking.virtual
 parameters:

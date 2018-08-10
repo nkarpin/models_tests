@@ -10,6 +10,9 @@ classes:
 - system.galera.server.database.keystone
 - system.galera.server.database.nova
 - system.galera.server.database.neutron
+- system.galera.server.database.aodh
+- system.galera.server.database.panko
+- system.galera.server.database.gnocchi
 #- haproxy.proxy.listen.openstack.galera.clustercheck
 - cluster.jenkins-oscore-test-cookiecutter-model-423.infra
 - cluster.jenkins-oscore-test-cookiecutter-model-423.openstack.networking.virtual

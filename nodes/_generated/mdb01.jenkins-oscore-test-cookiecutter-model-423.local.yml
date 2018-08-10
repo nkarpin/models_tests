@@ -1,0 +1,17 @@
+classes:
+- cluster.jenkins-oscore-test-cookiecutter-model-423.openstack.telemetry
+parameters:
+  _param:
+    ceilometer_create_gnocchi_resources: True
+    keepalived_vip_priority: 103
+    linux_system_codename: xenial
+    openstack_node_role: primary
+    redis_cluster_role: master
+    salt_master_host: 10.10.0.15
+    single_address: 10.11.0.96
+  linux:
+    system:
+      name: mdb01
+      domain: jenkins-oscore-test-cookiecutter-model-423.local
+      cluster: default
+      environment: prd

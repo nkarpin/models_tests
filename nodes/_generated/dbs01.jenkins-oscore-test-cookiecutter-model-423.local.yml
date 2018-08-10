@@ -1,0 +1,17 @@
+classes:
+- service.galera.master.cluster
+- cluster.jenkins-oscore-test-cookiecutter-model-423.openstack.database
+- cluster.jenkins-oscore-test-cookiecutter-model-423.openstack.database_init
+parameters:
+  _param:
+    keepalived_vip_priority: 103
+    linux_system_codename: xenial
+    mysql_cluster_role: master
+    salt_master_host: 10.10.0.15
+    single_address: 10.11.0.51
+  linux:
+    system:
+      name: dbs01
+      domain: jenkins-oscore-test-cookiecutter-model-423.local
+      cluster: default
+      environment: prd

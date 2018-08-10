@@ -1,49 +1,20 @@
-# KVM nodes default networking template
-#
 parameters:
   linux:
     network:
-      bridge: linux
+      bridge: openvswitch
       interface:
-        eth0:
+        ens4:
           enabled: true
+          name: ens4
+          type: eth
+          proto: dhcp
+        ens3:
+          enabled: true
+          name: ens3
           type: eth
           proto: manual
-          name: ${_param:deploy_nic}
-        eth1:
-          enabled: true
-          type: slave
-          proto: manual
-          name: ${_param:primary_first_nic}
-          master: bond0
-        eth2:
-          enabled: true
-          type: slave
-          proto: manual
-          name: ${_param:primary_second_nic}
-          master: bond0
-        br-mgm:
-          enabled: true
-          type: bridge
-          proto: dhcp
-          use_interfaces:
-          - ${_param:deploy_nic}
-        bond0:
-          enabled: true
-          proto: manual
-          type: bond
-          use_interfaces:
-          - ${_param:primary_first_nic}
-          - ${_param:primary_second_nic}
-          slaves: ${_param:primary_first_nic} ${_param:primary_second_nic}
-          mode: active-backup
-        bond0.1:
-          name: bond0.${_param:control_vlan}
-          enabled: true
-          proto: manual
-          type: vlan
-          use_interfaces:
-          - bond0
+          ipflush_onchange: true
+          restart_on_ipflush: true
         br-ctl:
           enabled: true
           type: bridge
@@ -51,4 +22,11 @@ parameters:
           address: ${_param:single_address}
           netmask: ${_param:control_network_netmask}
           use_interfaces:
-          - bond0.${_param:control_vlan}
+          - ens3
+        ens5:
+          enabled: true
+          name: ens5
+          type: eth
+          proto: manual
+          ipflush_onchange: true
+          restart_on_ipflush: true

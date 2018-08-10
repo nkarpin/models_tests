@@ -1,0 +1,16 @@
+classes:
+- service.galera.slave.cluster
+- cluster.jenkins-oscore-test-cookiecutter-model-423.openstack.database
+parameters:
+  _param:
+    keepalived_vip_priority: 102
+    linux_system_codename: xenial
+    mysql_cluster_role: slave
+    salt_master_host: 10.10.0.15
+    single_address: 10.11.0.52
+  linux:
+    system:
+      name: dbs02
+      domain: jenkins-oscore-test-cookiecutter-model-423.local
+      cluster: default
+      environment: prd

@@ -1,0 +1,17 @@
+classes:
+- cluster.jenkins-oscore-test-cookiecutter-model-423.openstack.control
+parameters:
+  _param:
+    keepalived_vip_priority: 101
+    linux_system_codename: xenial
+    opencontrail_database_id: 3
+    openstack_node_role: secondary
+    rabbitmq_cluster_role: slave
+    salt_master_host: 10.10.0.15
+    single_address: 10.11.0.13
+  linux:
+    system:
+      name: ctl03
+      domain: jenkins-oscore-test-cookiecutter-model-423.local
+      cluster: default
+      environment: prd

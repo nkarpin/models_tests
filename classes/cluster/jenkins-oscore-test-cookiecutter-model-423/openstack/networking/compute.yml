@@ -1,53 +1,40 @@
-# Openstack compute node networking template
-#
 parameters:
   linux:
     network:
+      bridge: openvswitch
       interface:
-        eth1:
-          mtu: 9000
+        ens4:
           enabled: true
-          type: slave
+          name: ens4
+          type: eth
+          proto: dhcp
+        ens3:
+          enabled: true
+          name: ens3
+          type: eth
           proto: manual
-          name: ${_param:primary_first_nic}
-          master: bond0
-        eth2:
-          mtu: 9000
+          ipflush_onchange: true
+          restart_on_ipflush: true
+        br-ctl:
           enabled: true
-          type: slave
-          proto: manual
-          name: ${_param:primary_second_nic}
-          master: bond0
-        bond0:
-          enabled: true
-          proto: manual
-          type: bond
-          use_interfaces:
-          - ${_param:primary_second_nic}
-          - ${_param:primary_first_nic}
-          slaves: ${_param:primary_second_nic} ${_param:primary_first_nic}
-          mode: active-backup
-        bond0.1:
-          name: bond0.${_param:control_vlan}
-          enabled: true
-          type: vlan
+          type: bridge
           proto: static
           address: ${_param:single_address}
           netmask: ${_param:control_network_netmask}
           use_interfaces:
-          - bond0
-        bond0.2:
-          name: bond0.${_param:tenant_vlan}
+          - ens3
+        ens5:
           enabled: true
-          type: vlan
+          name: ens5
+          type: eth
           proto: manual
-          use_interfaces:
-          - bond0
+          ipflush_onchange: true
+          restart_on_ipflush: true
         br-mesh:
           enabled: true
           type: bridge
+          proto: static
           address: ${_param:tenant_address}
           netmask: ${_param:tenant_network_netmask}
           use_interfaces:
-          - bond0.${_param:tenant_vlan}
-      bridge: openvswitch
+          - ens5

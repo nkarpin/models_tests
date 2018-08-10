@@ -10,6 +10,12 @@ classes:
 - system.keystone.client.service.nova-placement
 - system.keystone.client.service.cinder3
 - system.keystone.client.service.keystone
+- system.keystone.client.service.aodh
+- system.keystone.client.service.ceilometer
+- system.keystone.client.service.panko
+- system.keystone.client.service.gnocchi
+- system.gnocchi.client
+- system.gnocchi.client.v1.archive_policy.default
 parameters:
   _param:
     openstack_region: RegionOne

@@ -1,0 +1,14 @@
+classes:
+- cluster.jenkins-oscore-test-cookiecutter-model-423.openstack.proxy
+parameters:
+  _param:
+    keepalived_vip_priority: 101
+    linux_system_codename: xenial
+    salt_master_host: 10.10.0.15
+    single_address: 10.11.0.82
+  linux:
+    system:
+      name: prx02
+      domain: jenkins-oscore-test-cookiecutter-model-423.local
+      cluster: default
+      environment: prd

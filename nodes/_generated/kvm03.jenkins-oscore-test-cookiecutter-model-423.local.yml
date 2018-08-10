@@ -1,0 +1,19 @@
+classes:
+- cluster.jenkins-oscore-test-cookiecutter-model-423.infra.kvm
+- cluster.jenkins-oscore-test-cookiecutter-model-423.infra.backup.server
+- cluster.jenkins-oscore-test-cookiecutter-model-423.infra.glusterfs
+parameters:
+  _param:
+    deploy_address: 10.10.0.243
+    keepalived_vip_priority: 102
+    linux_system_codename: xenial
+    public_address: 10.11.0.243
+    salt_master_host: 10.10.0.15
+    single_address: 10.11.0.243
+    storage_address: 10.11.0.243
+  linux:
+    system:
+      name: kvm03
+      domain: jenkins-oscore-test-cookiecutter-model-423.local
+      cluster: default
+      environment: prd

@@ -1,0 +1,14 @@
+classes:
+- cluster.jenkins-oscore-test-cookiecutter-model-423.openstack.compute
+parameters:
+  _param:
+    linux_system_codename: xenial
+    salt_master_host: 10.10.0.15
+    single_address: 10.11.1.101
+    tenant_address: 10.12.2.101
+  linux:
+    system:
+      name: cmp1
+      domain: jenkins-oscore-test-cookiecutter-model-423.local
+      cluster: default
+      environment: prd
